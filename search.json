@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "Visual Analysis.html",
+    "href": "Visual Analysis.html",
+    "title": "Visual Analysis",
+    "section": "",
+    "text": "How can we segment mall customers based on their purchasing behaviour to identify what age group and gender has certain spending scores and how do we classify them."
+  },
+  {
+    "objectID": "Visual Analysis.html#central-question",
+    "href": "Visual Analysis.html#central-question",
+    "title": "Visual Analysis",
+    "section": "",
+    "text": "How can we segment mall customers based on their purchasing behaviour to identify what age group and gender has certain spending scores and how do we classify them."
+  },
+  {
+    "objectID": "Visual Analysis.html#conclusion",
+    "href": "Visual Analysis.html#conclusion",
+    "title": "Visual Analysis",
+    "section": "Conclusion",
+    "text": "Conclusion\nThese visualizations reveal distinct patterns in age, income, spending behavior, and gender distribution, providing valuable insights for customer segmentation and targeted marketing strategies.\nMall brands, companies, and other businesses benefit when given information about what type of age groups or genders are most common mall shoppers. For example, They most highest spenders are the age groups between age 18 to 40, this could help by encouraging brands to make clothes and other products of fashion that would interest these age groups. Another example could be that the classification of genders and spending scores, this could benefit by allowing brands to make more products that would interest the high spenders of that specific gender and possibly double the profit of those brands"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mall Customer Segmentation",
+    "section": "",
+    "text": "Customer segmentation is a key marketing strategy that divides a customer base into distinct groups with similar characteristics. Using mall customer data, this analysis reveals relationships between age, gender, income, and spending score. The visualizations show that age groups that have the highest spending scores and what gender has the most highest spending score, this would reveal that these age groups and genders are the most commmon spenders in malls."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Mall Customer Segmentation",
+    "section": "",
+    "text": "Customer segmentation is a key marketing strategy that divides a customer base into distinct groups with similar characteristics. Using mall customer data, this analysis reveals relationships between age, gender, income, and spending score. The visualizations show that age groups that have the highest spending scores and what gender has the most highest spending score, this would reveal that these age groups and genders are the most commmon spenders in malls."
+  },
+  {
+    "objectID": "index.html#data-model",
+    "href": "index.html#data-model",
+    "title": "Mall Customer Segmentation",
+    "section": "Data Model",
+    "text": "Data Model\nThe plot below analyzes mall customer information, offering insights for brands and companies to enhance marketing efficiency and boost profitability. By understanding customer behavior and preferences, businesses can tailor their strategies, optimize their campaigns, and achieve better results, ultimately leading to increased revenue and customer satisfaction.\n\nAge Distributions\nThe plot allows you to compare the age distributions between male and female customers. For example, you might observe that one gender has a wider age range or a higher concentration of customers within a specific age group.\n\n\n\n\n\n\nGraphic Logistics -\n\nThe boxplot provides a summary of the age distribution within each gender group, showing the median, quartiles, and potential outliers.\nThe violin plot adds information about the density of the data at different age levels. Wider sections of the violin plot indicate higher density (more customers) at those age levels."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi my name is Nihal Neeraj. I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).\nYou can reach me at my email: nihalneeraj2009@gmail.com"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About",
+    "section": "",
+    "text": "Hi my name is Nihal Neeraj. I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).\nYou can reach me at my email: nihalneeraj2009@gmail.com"
+  },
+  {
+    "objectID": "about.html#about-this-project",
+    "href": "about.html#about-this-project",
+    "title": "About",
+    "section": "About this Project",
+    "text": "About this Project\nThis project was created as part of Kane’s Free Data Science Bootcamp, A free bootcamp that teaches the basics of Data Science as an 8-week course."
+  },
+  {
+    "objectID": "source.html",
+    "href": "source.html",
+    "title": "Source",
+    "section": "",
+    "text": "Warning: package 'tidycensus' was built under R version 4.4.1"
+  },
+  {
+    "objectID": "source.html#dataset",
+    "href": "source.html#dataset",
+    "title": "Source",
+    "section": "Dataset",
+    "text": "Dataset\n\n\n# A tibble: 200 × 5\n   CustomerID Gender   Age `Annual Income (k$)` `Spending Score (1-100)`\n        &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;                &lt;dbl&gt;                    &lt;dbl&gt;\n 1          1 Male      19                   15                       39\n 2          2 Male      21                   15                       81\n 3          3 Female    20                   16                        6\n 4          4 Female    23                   16                       77\n 5          5 Female    31                   17                       40\n 6          6 Female    22                   17                       76\n 7          7 Female    35                   18                        6\n 8          8 Female    23                   18                       94\n 9          9 Male      64                   19                        3\n10         10 Female    30                   19                       72\n# ℹ 190 more rows\n\n\n\nLink to my dataset\nThe link to my dataset: https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python?resource=download\n\n\nTable Logistics\n\nAge\n\nDescription: The Age column represents the age of the mall customers.\nData Type: Integer\nRange: Typically ranges from a minimum to a maximum age of the customers in the dataset (e.g., 18 to 70 years old).\nUsage: This column is used to analyze the age distribution of the customers. It can help identify which age groups are most common among the mall’s customers, which can inform marketing strategies and product offerings.\n\nAnnual Income\n\nDescription: The Annual Income column, often labeled as Annual Income (k$), represents the annual income of the customers in thousands of dollars.\nData Type: Integer\nRange: Typically ranges from a minimum to a maximum annual income (e.g., $15,000 to $137,000).\nUsage: This column is used to analyze the income distribution of the customers. Understanding the income levels of customers can help in segmenting the market and tailoring products or services to different income groups. It can also inform pricing strategies and promotional offers.\n\nSpending Score\n\nDescription: The Spending Score column, often labeled as Spending Score (1-100), represents a score assigned to customers based on their spending behavior and purchasing data.\nData Type: Integer\nRange: Typically ranges from 1 to 100, with higher scores indicating higher spending.\nUsage: This column is used to segment customers based on their spending behavior. High spenders, medium spenders, and low spenders can be identified and targeted accordingly. This information is crucial for creating targeted marketing campaigns, loyalty programs, and personalized recommendations.\n\nGender\n\nDescription: The Gender column represents the gender of the mall customers.\nData Type: Categorical (usually represented as text or factor)\nCategories: Typically includes categories such as Male and Female. Depending on the dataset, there may also be other categories or representations (e.g., M and F).\nUsage: This column is used to analyze the demographic distribution of the customers based on gender. It helps in understanding the gender composition of the customer base, which can inform targeted marketing strategies, product development, and service offerings. By analyzing gender distribution, businesses can identify trends and preferences that may vary between different gender groups."
+  }
+]
