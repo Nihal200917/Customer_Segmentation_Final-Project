@@ -62,13 +62,6 @@ interactive_plot <- ggplotly(plot, tooltip = c("x", "y"))
 # Display the interactive plot
 interactive_plot
 ```
-Graph Logistics - 
-
- * The graph visually represents the corellation between spending scores and age, this allows marketing brands to produce products that would drag attention to the minds of these mall customers.
- 
- * The x axis shows the age of customers which we can then group into age groups to determine types of spenders
- 
- * The y axis shows the spending score of customers which can then be used to determine the spending scores of people with certain age
 
 ### Different types of Spenders
 The below graph represents the different types of spenders and their spending scores.
@@ -125,19 +118,6 @@ interactive_plot <- ggplotly(plot6, tooltip = c("x", "y"))
 # Display the interactive plot
 interactive_plot
 ```
-Graph Logistics - 
-
- * The graph visually represents the corellation between spending scores and age, this allows marketing brands to produce products that would drag attention to the minds of these mall customers that fall into specific age groups.
- 
- * The x axis shows the age of customers which we can then group into age groups to determine types of spenders
- 
- * The y axis shows the spending score of customers which can then be used to determine the spending scores of people with certain age
-
- * The purple colored points represent High spenders who have their spending scores above 80.
-
- * The bright yellow points represents Medium spenders who have spending score between 80 and 40.
-
- * The teel colored points represents Low spenders who have spending score below 40.
 
 ### Different types of Spenders based on Gender
 The below graph represents different types of spenders but instead of classification of the type of spenders, this graph represents the types of gender that have certain spending scores.
@@ -208,13 +188,6 @@ interactive_plot <- ggplotly(plot6, tooltip = c("x", "y"))
 # Display the interactive plot
 interactive_plot
 ```
-Graph Logistics - 
-
- * The graph visually represents the corellation between spending scores and gender, this allows marketing brands to produce products that would drag attention to the minds of mall customers of these specific genders so they get double the profit.
- 
- * The x axis shows the age of customers which we can then group into age groups to determine types of spenders.
-
- * The color determines the gender of these mall customers which could then be classified into which gender spends the most in malls.
 
 ## Conclusion
 These visualizations reveal distinct patterns in age, income, spending behavior, and gender distribution, providing valuable insights for customer segmentation and targeted marketing strategies.

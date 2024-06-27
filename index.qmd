@@ -9,8 +9,6 @@ Customer segmentation is a key marketing strategy that involves dividing a compa
 
 ## Data Model
 
-The plot below analyzes mall customer information, offering insights for brands and companies to enhance marketing efficiency and boost profitability. By understanding customer behavior and preferences, businesses can tailor their strategies, optimize their campaigns, and achieve better results, ultimately leading to increased revenue and customer satisfaction.
-
 ```{r}
 #| message: false
 #| label: setup
@@ -62,9 +60,4 @@ interactive_plot <- ggplotly(plot1)
 # Display the interactive plot
 interactive_plot
 ```
-Graphic Logistics - 
-
- * The boxplot provides a summary of the age distribution within each gender group, showing the median, quartiles, and     potential outliers.
- 
- * The violin plot adds information about the density of the data at different age levels. Wider sections of the violin    plot indicate higher density (more customers) at those age levels.
 
