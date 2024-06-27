@@ -25,14 +25,14 @@
     "href": "index.html",
     "title": "Mall Customer Segmentation",
     "section": "",
-    "text": "Customer segmentation is a key marketing strategy that divides a customer base into distinct groups with similar characteristics. Using mall customer data, this analysis reveals relationships between age, gender, income, and spending score. The visualizations show that age groups that have the highest spending scores and what gender has the most highest spending score, this would reveal that these age groups and genders are the most commmon spenders in malls."
+    "text": "Customer segmentation is a key marketing strategy that involves dividing a company’s customer base into distinct groups of individuals that share similar characteristics. This was sourced from a Kaggle dataset that had basic original mall customer information. The data was filtered and selected to show the relationship between age, gender, Income, and spending score which would possibly become useful for businesses to make the market more effective. The visualizations reveal distinct patterns in age, income, spending behavior, and gender distribution, providing valuable insights for customer segmentation and targeted marketing strategies."
   },
   {
     "objectID": "index.html#introduction",
     "href": "index.html#introduction",
     "title": "Mall Customer Segmentation",
     "section": "",
-    "text": "Customer segmentation is a key marketing strategy that divides a customer base into distinct groups with similar characteristics. Using mall customer data, this analysis reveals relationships between age, gender, income, and spending score. The visualizations show that age groups that have the highest spending scores and what gender has the most highest spending score, this would reveal that these age groups and genders are the most commmon spenders in malls."
+    "text": "Customer segmentation is a key marketing strategy that involves dividing a company’s customer base into distinct groups of individuals that share similar characteristics. This was sourced from a Kaggle dataset that had basic original mall customer information. The data was filtered and selected to show the relationship between age, gender, Income, and spending score which would possibly become useful for businesses to make the market more effective. The visualizations reveal distinct patterns in age, income, spending behavior, and gender distribution, providing valuable insights for customer segmentation and targeted marketing strategies."
   },
   {
     "objectID": "index.html#data-model",
@@ -46,14 +46,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hi my name is Nihal Neeraj. I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).\nYou can reach me at my email: nihalneeraj2009@gmail.com"
+    "text": "Hi my name is Nihal Neeraj. I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).\nYou can reach me at my email: nihalneeraj2009@gmail.com\nYou could also check out my github repository when you click on my name or just click on this link: https://github.com/Nihal200917"
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
     "title": "About",
     "section": "",
-    "text": "Hi my name is Nihal Neeraj. I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).\nYou can reach me at my email: nihalneeraj2009@gmail.com"
+    "text": "Hi my name is Nihal Neeraj. I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).\nYou can reach me at my email: nihalneeraj2009@gmail.com\nYou could also check out my github repository when you click on my name or just click on this link: https://github.com/Nihal200917"
   },
   {
     "objectID": "about.html#about-this-project",
