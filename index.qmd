@@ -1,0 +1,63 @@
+---
+title: "Mall Customer Segmentation"
+execute: 
+  echo: false
+---
+
+## Introduction
+Customer segmentation is a key marketing strategy that divides a customer base into distinct groups with similar characteristics. Using mall customer data, this analysis reveals relationships between age, gender, income, and spending score. The visualizations show that age groups that have the highest spending scores and what gender has the most highest spending score, this would reveal that these age groups and genders are the most commmon spenders in malls.
+
+## Data Model
+
+The plot below analyzes mall customer information, offering insights for brands and companies to enhance marketing efficiency and boost profitability. By understanding customer behavior and preferences, businesses can tailor their strategies, optimize their campaigns, and achieve better results, ultimately leading to increased revenue and customer satisfaction.
+
+```{r}
+#| message: false
+#| label: setup
+
+library(tidyverse)
+library(scales)
+library(plotly)
+```
+### Age Distributions
+The plot allows you to compare the age distributions between male and female customers. For example, you might observe that one gender has a wider age range or a higher concentration of customers within a specific age group.
+```{r}
+#| message: false
+#| warning: false
+
+plot1 <- read_csv("/Users/neera/OneDrive/Documents/Desktop/projects/Customer_Segmentation/Mall_Customers.csv") |>
+  drop_na() |>
+  ggplot(aes(x = Gender,
+             y = Age, 
+             fill = Gender)) +
+  geom_boxplot(width = 3) +
+  geom_violin(alpha = 0.5,
+              width = 0.1) +
+  scale_y_continuous(limits = c(10, 70), 
+                     breaks = seq(10, 70, by = 10)) +
+  theme_minimal() +
+  labs(title = "Age Distribution by Gender Among Mall Customers",
+       subtitle = "Analysis of Age Variations within Gender Groups",
+       x = "Gender",
+       y = "Age",
+       caption = "Source: Mall Customers Dataset") +
+  theme(
+    plot.title = element_text(size = 16,
+                              face = "bold"),
+    plot.subtitle = element_text(size = 12),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.position = "top",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10))
+
+interactive_plot <- ggplotly(plot1)
+
+interactive_plot
+```
+Graphic Logistics - 
+
+ * The boxplot provides a summary of the age distribution within each gender group, showing the median, quartiles, and     potential outliers.
+ 
+ * The violin plot adds information about the density of the data at different age levels. Wider sections of the violin    plot indicate higher density (more customers) at those age levels.
+

@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Customer Segmentation"
+  navbar:
+    background: dark
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Visual Analysis.qmd
+        text: Visual Analysis
+      - href: source.qmd
+        text: Source
+      - href: about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+

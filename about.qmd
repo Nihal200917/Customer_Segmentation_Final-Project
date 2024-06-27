@@ -1,0 +1,13 @@
+---
+title: "About"
+---
+
+## About Me
+
+Hi my name is [Nihal Neeraj](https://github.com/Nihal200917). I am a rising 9th grader who enjoys Art and sports like Soccer. I am willing to learn and explore more on Data Science and ML(Machine Language).
+
+You can reach me at my email: [nihalneeraj2009@gmail.com](nihalneeraj2009@gmail.com)
+
+## About this Project
+
+This project was created as part of [Kane's Free Data Science Bootcamp](https://bootcamp.davidkane.info/schedule.html), A free bootcamp that teaches the basics of Data Science as an 8-week course.

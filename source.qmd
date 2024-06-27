@@ -1,0 +1,59 @@
+---
+title: "Source"
+execute: 
+  echo: false
+---
+```{r}
+#| message: false
+library(tidyverse)
+library(tidycensus)
+library(scales)
+library(plotly)
+```
+
+## Dataset
+```{r}
+#| message: false
+x <- read_csv(file = "Mall_Customers.csv")
+print(x)
+```
+### Link to my dataset
+
+The link to my dataset:
+[https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python?resource=download](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python?resource=download)
+
+### Table Logistics
+
+ * Age
+   * Description: The Age column represents the age of the mall customers.
+   * Data Type: Integer
+   * Range: Typically ranges from a minimum to a maximum age of the customers in the dataset (e.g., 18 to 70 years old).
+   * Usage: This column is used to analyze the age distribution of the customers. It can help identify which age groups 
+     are most common among the mall's customers, which can inform marketing strategies and product offerings.
+
+ * Annual Income
+   * Description: The Annual Income column, often labeled as Annual Income (k$), represents the annual income of the
+     customers in thousands of dollars.
+   * Data Type: Integer
+   * Range: Typically ranges from a minimum to a maximum annual income (e.g., $15,000 to $137,000).
+   * Usage: This column is used to analyze the income distribution of the customers. Understanding the income levels of
+     customers can help in segmenting the market and tailoring products or services to different income groups. It can       also inform pricing strategies and promotional offers.
+ 
+ * Spending Score
+   * Description: The Spending Score column, often labeled as Spending Score (1-100), represents a score assigned to
+     customers based on their spending behavior and purchasing data.
+   * Data Type: Integer
+   * Range: Typically ranges from 1 to 100, with higher scores indicating higher spending.
+   * Usage: This column is used to segment customers based on their spending behavior. High spenders, medium spenders,       and low spenders can be identified and targeted accordingly. This information is crucial for creating targeted
+     marketing campaigns, loyalty programs, and personalized recommendations.
+ 
+ * Gender
+   * Description: The Gender column represents the gender of the mall customers.
+   * Data Type: Categorical (usually represented as text or factor)
+   * Categories: Typically includes categories such as Male and Female. Depending on the dataset, there may also be
+      other
+    categories or representations (e.g., M and F).
+   * Usage: This column is used to analyze the demographic distribution of the customers based on gender. It helps in
+     understanding the gender composition of the customer base, which can inform targeted marketing strategies, product
+     development, and service offerings. By analyzing gender distribution, businesses can identify trends and                preferences
+     that may vary between different gender groups.
