@@ -15,46 +15,51 @@ this plot represents the base idea which is going to be modified to classify eac
 ```{r}
 #| message: false
 #| label: setup
-
+# Load necessary libraries
 library(tidyverse)
 library(scales)
 library(plotly)
 ```
+
 ```{r}
 #| warning: false
 #| message: false
 
-plot5 <- read_csv("Mall_Customers.csv") |>
-  drop_na() |>
-  select(`Spending Score (1-100)`,
-         Age)
 
-plot <- ggplot(plot5, aes(x = Age, 
+# Read the data from CSV, remove missing values, and select relevant columns
+plot5 <- read_csv("Mall_Customers.csv") |>
+  drop_na() |>  # Remove rows with any missing values
+  select(`Spending Score (1-100)`, Age)  # Select only the 'Spending Score' and 'Age' columns
+
+# Create the ggplot
+plot <- ggplot(plot5, aes(x = Age,
                           y = `Spending Score (1-100)`)) +
   geom_point(color = 'blue',
-             alpha = 0.6) +
-  geom_density2d(color = 'red') +
+             alpha = 0.6) +  # Add points with blue color and 60% opacity
+  geom_density2d(color = 'red') +  # Add red density contours
   geom_smooth(method = 'loess',
-              se = FALSE, 
-              color = 'green') +
-  scale_y_continuous(limits = c(0, 100), 
-                     breaks = seq(0, 100, by = 20)) +
+              se = FALSE,
+              color = 'green') +  # Add a green LOESS smooth line without confidence interval
+  scale_y_continuous(limits = c(0, 100),
+                     breaks = seq(0, 100, by = 20)) +  # Set y-axis limits and breaks
   labs(
-    title = "Age vs. Spending Score",
-    subtitle = "Analyzing the spending behavior across different age groups",
-    x = "Age",
-    y = "Spending Score (1-100)"
+    title = "Age vs. Spending Score",  # Title of the plot
+    subtitle = "Analyzing the spending behavior across different age groups",  # Subtitle of the plot
+    x = "Age",  # Label for x-axis
+    y = "Spending Score (1-100)"  # Label for y-axis
   ) +
-  theme_minimal() +
+  theme_minimal() +  # Apply minimalistic theme
   theme(
-    plot.title = element_text(size = 16, face = "bold"),
-    plot.subtitle = element_text(size = 14),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
+    plot.title = element_text(size = 16, face = "bold"),  # Style the plot title
+    plot.subtitle = element_text(size = 14),  # Style the plot subtitle
+    axis.title = element_text(size = 12),  # Style the axis titles
+    axis.text = element_text(size = 10)  # Style the axis text
   )
 
+# Convert the ggplot to an interactive plotly plot
 interactive_plot <- ggplotly(plot, tooltip = c("x", "y"))
 
+# Display the interactive plot
 interactive_plot
 ```
 Graph Logistics - 
@@ -71,50 +76,53 @@ The below graph represents the different types of spenders and their spending sc
 #| warning: false
 #| message: false
 
+# Read the data from CSV, remove missing values, and create new columns for spender categories
 data <- read_csv("Mall_Customers.csv") |>
-  drop_na() |>
-  mutate(High_Spenders = ifelse(`Spending Score (1-100)` >= 80,
-                                `Spending Score (1-100)`, NA),
-         Low_Spenders = ifelse(`Spending Score (1-100)` <= 40,
-                               `Spending Score (1-100)`, NA), 
-         Medium_Spenders = ifelse(`Spending Score (1-100)` <= 80 & `Spending Score (1-100)` >= 40,
-                                  `Spending Score (1-100)`, NA))
+  drop_na() |>  # Remove rows with any missing values
+  mutate(High_Spenders = ifelse(`Spending Score (1-100)` >= 80, 
+                                `Spending Score (1-100)`, NA),  # High spenders: Spending Score >= 80
+         Low_Spenders = ifelse(`Spending Score (1-100)` <= 40, 
+                               `Spending Score (1-100)`, NA),  # Low spenders: Spending Score <= 40
+         Medium_Spenders = ifelse(`Spending Score (1-100)` <= 80 & `Spending Score (1-100)` >= 40, 
+                                  `Spending Score (1-100)`, NA))  # Medium spenders: Spending Score between 40 and 80
 
-
+# Create the ggplot
 plot6 <- data |>
   ggplot() +
-  geom_point(aes(x = Age, y = High_Spenders),
-             color = '#440154FF',
-             size = 1,
-             alpha = 0.8) +
+  geom_point(aes(x = Age, y = High_Spenders), 
+             color = '#440154FF',  # Dark purple color for high spenders
+             size = 1, 
+             alpha = 0.8) +  # Semi-transparent points
   geom_point(aes(x = Age, y = Medium_Spenders), 
-             color = '#FDE725FF', 
-             size = 1,
-             alpha = 0.8) +
-  geom_point(aes(x = Age, y = Low_Spenders),
-             color = '#21908CFF', 
-             size = 1,
-             alpha = 0.8) +
-  scale_y_continuous(limits = c(20, 100),
-                     breaks = seq(20, 100, by = 5)) +
+             color = '#FDE725FF',  # Bright yellow color for medium spenders
+             size = 1, 
+             alpha = 0.8) +  # Semi-transparent points
+  geom_point(aes(x = Age, y = Low_Spenders), 
+             color = '#21908CFF',  # Teal color for low spenders
+             size = 1, 
+             alpha = 0.8) +  # Semi-transparent points
+  scale_y_continuous(limits = c(20, 100), 
+                     breaks = seq(20, 100, by = 5)) +  # Set y-axis limits and breaks
   labs(
-    title = "Different types of Spenders",
-    subtitle = "High, Medium, and Low Spenders",
-    caption = "Source: Mall Customers Dataset",
-    x = "Age",
-    y = "Spending Score (1-100)"
+    title = "Different types of Spenders",  # Title of the plot
+    subtitle = "High, Medium, and Low Spenders",  # Subtitle of the plot
+    caption = "Source: Mall Customers Dataset",  # Caption of the plot
+    x = "Age",  # Label for x-axis
+    y = "Spending Score (1-100)"  # Label for y-axis
   ) +
-  theme_minimal() +
+  theme_minimal() +  # Apply minimalistic theme
   theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    plot.subtitle = element_text(size = 12, face = "italic", hjust = 0.5),
-    plot.caption = element_text(size = 10, hjust = 1),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),  # Style the plot title
+    plot.subtitle = element_text(size = 12, face = "italic", hjust = 0.5),  # Style the plot subtitle
+    plot.caption = element_text(size = 10, hjust = 1),  # Style the plot caption
+    axis.title = element_text(size = 12),  # Style the axis titles
+    axis.text = element_text(size = 10)  # Style the axis text
   )
 
+# Convert the ggplot to an interactive plotly plot
 interactive_plot <- ggplotly(plot6, tooltip = c("x", "y"))
 
+# Display the interactive plot
 interactive_plot
 ```
 Graph Logistics - 
@@ -137,47 +145,67 @@ The below graph represents different types of spenders but instead of classifica
 #| warning: false
 #| message: false
 
-# Read and inspect the data
+# Read the data from CSV and remove rows with missing values
 data <- read_csv("Mall_Customers.csv") |>
-  drop_na()
+  drop_na()  # Remove rows with any missing values
 
-# Create filtered columns for spenders
+# Create new columns for spender categories based on 'Spending Score (1-100)'
 data <- data |>
-  mutate(High_Spenders = ifelse(`Spending Score (1-100)` >= 80, `Spending Score (1-100)`, NA),
-         Low_Spenders = ifelse(`Spending Score (1-100)` <= 40, `Spending Score (1-100)`, NA),
-         Medium_Spenders = ifelse(`Spending Score (1-100)` < 80 & `Spending Score (1-100)` > 40, `Spending Score (1-100)`, NA))
-
-# Verify column names to ensure 'Gender' exists
-if (!"Gender" %in% colnames(data)) {
-  stop("Gender column not found in the dataset")
-}
-
-# Create the plot
-plot6 <- data |>
-  ggplot() +
-  geom_point(aes(x = Age, y = High_Spenders, color = Gender), size = 1, alpha = 0.8) +
-  geom_point(aes(x = Age, y = Medium_Spenders, color = Gender), size = 1, alpha = 0.8) +
-  geom_point(aes(x = Age, y = Low_Spenders, color = Gender), size = 1, alpha = 0.8) +
-  scale_y_continuous(limits = c(20, 100), breaks = seq(20, 100, by = 5)) +
-  labs(
-    title = "Spending Scores by Gender",
-    subtitle = "Spending scores compared to gender",
-    caption = "Source: Mall Customers Dataset",
-    x = "",
-    y = "Spending Score (1-100)"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    plot.subtitle = element_text(size = 12, face = "italic", hjust = 0.5),
-    plot.caption = element_text(size = 10, hjust = 1),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
+  mutate(
+    High_Spenders = ifelse(`Spending Score (1-100)` >= 80, 
+                           `Spending Score (1-100)`, NA),  # High spenders: Spending Score >= 80
+    Low_Spenders = ifelse(`Spending Score (1-100)` <= 40, 
+                          `Spending Score (1-100)`, NA),  # Low spenders: Spending Score <= 40
+    Medium_Spenders = ifelse(`Spending Score (1-100)` < 80 & `Spending Score (1-100)` > 40, 
+                             `Spending Score (1-100)`, NA)  # Medium spenders: Spending Score between 40 and 80
   )
 
-# Make the plot interactive
+# Verify column names to ensure 'Gender' exists in the dataset
+if (!"Gender" %in% colnames(data)) {
+  stop("Gender column not found in the dataset")  # Stop execution if 'Gender' column is not found
+}
+
+# Create the ggplot
+plot6 <- data |>
+  ggplot() +
+  geom_point(aes(x = Age,
+                 y = High_Spenders, 
+                 color = Gender), 
+             size = 1,
+             alpha = 0.8) +  # Add points for high spenders
+  geom_point(aes(x = Age, y = Medium_Spenders, color = Gender), size = 1, alpha = 0.8) +  # Add points for medium spenders
+  geom_point(aes(x = Age, 
+                 y = Low_Spenders,
+                 color = Gender), 
+             size = 1, 
+             alpha = 0.8) +  # Add points for low spenders
+  scale_y_continuous(limits = c(20, 100),
+                     breaks = seq(20, 100, by = 5)) +  # Set y-axis limits and breaks
+  labs(
+    title = "Spending Scores by Gender",  # Title of the plot
+    subtitle = "Spending scores compared to gender",  # Subtitle of the plot
+    caption = "Source: Mall Customers Dataset",  # Caption of the plot
+    x = "Age",  # Label for x-axis
+    y = "Spending Score (1-100)"  # Label for y-axis
+  ) +
+  theme_minimal() +  # Apply minimalistic theme
+  theme(
+    plot.title = element_text(size = 16,
+                              face = "bold",
+                              hjust = 0.5),  # Style the plot title
+    plot.subtitle = element_text(size = 12, 
+                                 face = "italic",
+                                 hjust = 0.5),  # Style the plot subtitle
+    plot.caption = element_text(size = 10,
+                                hjust = 1),  # Style the plot caption
+    axis.title = element_text(size = 12),  # Style the axis titles
+    axis.text = element_text(size = 10)  # Style the axis text
+  )
+
+# Convert the ggplot to an interactive plotly plot
 interactive_plot <- ggplotly(plot6, tooltip = c("x", "y"))
 
+# Display the interactive plot
 interactive_plot
 ```
 Graph Logistics - 

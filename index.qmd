@@ -25,34 +25,41 @@ The plot allows you to compare the age distributions between male and female cus
 #| message: false
 #| warning: false
 
+# Read the CSV file into a data frame and remove rows with missing values
 plot1 <- read_csv("/Users/neera/OneDrive/Documents/Desktop/projects/Customer_Segmentation/Mall_Customers.csv") |>
-  drop_na() |>
-  ggplot(aes(x = Gender,
-             y = Age, 
-             fill = Gender)) +
-  geom_boxplot(width = 3) +
-  geom_violin(alpha = 0.5,
-              width = 0.1) +
-  scale_y_continuous(limits = c(10, 70), 
-                     breaks = seq(10, 70, by = 10)) +
-  theme_minimal() +
-  labs(title = "Age Distribution by Gender Among Mall Customers",
-       subtitle = "Analysis of Age Variations within Gender Groups",
-       x = "Gender",
-       y = "Age",
-       caption = "Source: Mall Customers Dataset") +
-  theme(
-    plot.title = element_text(size = 16,
-                              face = "bold"),
-    plot.subtitle = element_text(size = 12),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10),
-    legend.position = "top",
-    legend.title = element_text(size = 12),
-    legend.text = element_text(size = 10))
+  drop_na()  # Remove rows with any missing values
 
+# Create a ggplot object for visualizing age distribution by gender
+plot1 <- plot1 |>
+  ggplot(aes(x = Gender,  # x-axis represents gender
+             y = Age,  # y-axis represents age
+             fill = Gender)) +  # Fill color based on gender
+  geom_boxplot(width = 0.3) +  # Add boxplots with specified width
+  geom_violin(alpha = 0.5, width = 0.1) +  # Add violin plots with specified transparency and width
+  scale_y_continuous(limits = c(10, 70),  # Set y-axis limits from 10 to 70
+                     breaks = seq(10, 70, by = 10)) +  # Define y-axis breaks at intervals of 10
+  theme_minimal() +  # Apply a minimalistic theme to the plot
+  labs(
+    title = "Age Distribution by Gender Among Mall Customers",  # Title of the plot
+    subtitle = "Analysis of Age Variations within Gender Groups",  # Subtitle of the plot
+    x = "Gender",  # Label for the x-axis
+    y = "Age",  # Label for the y-axis
+    caption = "Source: Mall Customers Dataset"  # Caption of the plot
+  ) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),  # Style the plot title
+    plot.subtitle = element_text(size = 12),  # Style the plot subtitle
+    axis.title = element_text(size = 12),  # Style the axis titles
+    axis.text = element_text(size = 10),  # Style the axis text
+    legend.position = "top",  # Position the legend at the top
+    legend.title = element_text(size = 12),  # Style the legend title
+    legend.text = element_text(size = 10)  # Style the legend text
+  )
+
+# Convert the ggplot object into an interactive plotly object
 interactive_plot <- ggplotly(plot1)
 
+# Display the interactive plot
 interactive_plot
 ```
 Graphic Logistics - 
